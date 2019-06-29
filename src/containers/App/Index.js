@@ -1,6 +1,28 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import Login from '../Login';
 import logo from './logo.svg';
 import './App.css';
+
+function AppRouter() {
+  return (
+    <Router>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+        </ul>
+      </nav>
+
+      <Route path="/" exact component={App}></Route>
+      <Route path="/login" component={Login}></Route>
+    </Router>
+  )
+}
 
 function App() {
   return (
@@ -23,4 +45,4 @@ function App() {
   );
 }
 
-export default App;
+export default AppRouter;
