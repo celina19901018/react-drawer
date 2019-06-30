@@ -1,10 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// import { createBrowserHistory } from 'history';
 import './index.css';
-import App from './containers/App';
+// import App from './containers/App';
+// import { ConnectedRouter } from 'connected-react-router';
+import RouterRefactor from './router';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+// const initialState = {};
+// const history = createBrowserHistory();
+ReactDOM.render(
+  // <ConnectedRouter history={history}>
+    <RouterRefactor />,
+  // </ConnectedRouter>,
+  document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
