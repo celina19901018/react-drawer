@@ -8,7 +8,7 @@ import configureStore from './store';
 import RouterRefactor from './router';
 import * as serviceWorker from './serviceWorker';
 
-import './index.css';
+import './index.scss';
 
 
 const initialState = {};
