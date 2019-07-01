@@ -4,7 +4,7 @@ import './style.less';
 class Login extends React.Component {
   render() {
     return(
-      <form>
+      <form className="login-wrap">
         <label htmlFor="username">
           <input
           id="username"

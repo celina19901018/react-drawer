@@ -1,9 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Router, Route } from 'react-router-dom';
 import routers from '../config/route';
 
 
-const RouterRefactor = () => {
+const RouterRefactor = ({history}) => {
   const getRouters = (props) => {
     const _router = routers.filter(item => props.location.pathname === item.path);
     const Component = _router.length > 0
@@ -20,7 +20,7 @@ const RouterRefactor = () => {
     )
   }
   return (
-    <Router>
+    <Router history={history}>
       <Route component={getRouters} />
     </Router>
   )
