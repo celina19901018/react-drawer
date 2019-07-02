@@ -16,6 +16,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:native": "node script/build.js --native",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -34,5 +35,7 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "archiver": "^3.0.0"
+  }
 }
