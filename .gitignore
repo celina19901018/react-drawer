@@ -1,6 +1,3 @@
 build/
 node_modules/
-# react-scripts 不支持 less 预处理器机制，所以使用 node-sass-chokidar 包，
-# 观察者将在src子目录中找到每个Sass文件，并在其旁边创建相应的CSS文件。
-# 忽略 src 下所以的 css 文件
-src/**/*.css
+*.zip
