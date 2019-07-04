@@ -9,7 +9,7 @@ const initialState = {
   error: false
 };
 
-export default (state = initialState, action) => {
+export default (state = initialState, action: any) => {
   switch (action.type) {
     case LOGIN_INIT:
       return {

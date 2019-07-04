@@ -11,13 +11,9 @@ import * as serviceWorker from './serviceWorker';
 import './index.scss';
 
 
-const initialState = {};
-const store = configureStore(initialState, BrowserRouter);
-const history = createBrowserHistory(BrowserRouter, store, {
-  selectorLocationState(state) {
-    return state.get('routing').toJS();
-  }
-});
+// const initialState = {};
+const store = configureStore();
+const history = createBrowserHistory();
 
 ReactDOM.render(
   <Provider store={store}>

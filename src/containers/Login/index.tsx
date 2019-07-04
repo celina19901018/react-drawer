@@ -1,12 +1,16 @@
 import React from 'react';
-import { combineReducers } from 'redux';
+import { combineReducers, Dispatch } from 'redux';
 import { connect } from 'react-redux';
 
 import { loginAction } from './action';
 import './style.scss';
 
-class Login extends React.Component {
-  submitHandler = (e) => {
+export interface Props {
+  login: Function
+}
+
+class Login extends React.Component<Props, object> {
+  submitHandler = (e: any) => {
     e.preventDefault();
     this.props.login({
       username: 'zhangsan',
@@ -34,8 +38,8 @@ class Login extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => state.loginReducer;
-const mapDispatchToProps = (dispatch) => {
+const mapStateToProps = (state: { loginReducer: object; }) => state.loginReducer;
+const mapDispatchToProps = (dispatch: any) => {
   return {
     login: () => dispatch(loginAction())
   }
