@@ -3,6 +3,7 @@ import { combineReducers, Dispatch } from 'redux';
 import { connect } from 'react-redux';
 
 import { loginAction } from './action';
+import { loginApi } from '../../utils/api'
 import './style.scss';
 
 export interface Props {
@@ -12,10 +13,13 @@ export interface Props {
 class Login extends React.Component<Props, object> {
   submitHandler = (e: any) => {
     e.preventDefault();
-    this.props.login({
-      username: 'zhangsan',
-      password: '123456'
-    })
+    // this.props.login();
+    fetch('/api/user')
+      .then(res => res.json())
+      .then(response => {
+        console.log(response)
+      })
+      .catch(err => console.log(err))
   }
   render() {
     return (
