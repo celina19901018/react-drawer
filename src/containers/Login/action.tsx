@@ -1,5 +1,5 @@
-import request from '../../utils/request';
-import { loginInApi, loginApi } from '../../utils/api';
+import request from '../../utils/superagent';
+import { loginInApi } from '../../utils/api';
 import {
   LOGIN_INIT,
   LOGIN_SUCCESS,
@@ -31,17 +31,17 @@ export const loginFailure = (error?: string) => {
 
 export const loginAction = (params?: object) => (dispatch: any, getState: any) => {
   dispatch(loginStart());
-  let _promise = request('get', loginInApi, params);
+  let _promise = request('post', loginInApi, params);
   _promise.then(res => res.json())
-  .then(res => {
-    if (res.resultCode === '000000') {
-      dispatch(loginSuccess(res.body))
-    } else {
-      dispatch(loginFailure(res.message))
-    }
-  })
-  .catch(err => {
-    dispatch(loginFailure(err))
-  });
+    .then(res => {
+      if (res.resultCode === '000000') {
+        dispatch(loginSuccess(res.body))
+      } else {
+        dispatch(loginFailure(res.message))
+      }
+    })
+    .catch(err => {
+      dispatch(loginFailure(err))
+    });
   return _promise;
 }

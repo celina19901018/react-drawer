@@ -3,14 +3,14 @@
  */
 module.exports = [
   {
-    "reg": "/collection-api/rest/userInfo",
-    "local": "/proxy_data/userInfo.json"
+    "reg": "/collection-api/userInfo",
+    "local": "/userInfo.json"
   },
   {
-    "reg": "/collection-api/rest/planList",
-    "local": "/proxy_data/planList.json"
+    "reg": "/collection-api/planList",
+    "local": "/planList.json"
   }, {
-    "reg": "/collection-api/rest/planInfo",
-    "local": "/proxy_data/planInfo.json"
+    "reg": "/collection-api/planInfo",
+    "local": "/planInfo.json"
   }
 ]

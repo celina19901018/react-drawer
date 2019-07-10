@@ -7,15 +7,13 @@ const TSET_NAME = 'test.com';// 测试环境，测试环境与开发环境有可
 const LOCAL_NAME = 'localhost';
 
 const prefixAdaptive = () => {
-  switch (window.location.hostname) {
-    case PROD_NAME:
-      return `https://${PROD_NAME}/`;
-    case STAGE_NAME:
-      return `https://${STAGE_NAME}/`;
-    case TSET_NAME:
+  switch (process.env.NODE_ENV) {
+    case 'development':
+      return '';
+    case 'test':
       return `https://${TSET_NAME}/`;
-    case LOCAL_NAME:
-      return `https://${LOCAL_NAME}:${port}/`
+    case 'production':
+      return `https://${PROD_NAME}/`
     default:
       return false;
   }

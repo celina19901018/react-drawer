@@ -3,8 +3,9 @@ import { combineReducers, Dispatch } from 'redux';
 import { connect } from 'react-redux';
 
 import { loginAction } from './action';
-import { loginApi } from '../../utils/api'
+import request from '../../utils/superagent';
 import './style.scss';
+import { loginInApi } from '../../utils/api';
 
 export interface Props {
   login: Function
@@ -13,15 +14,13 @@ export interface Props {
 class Login extends React.Component<Props, object> {
   submitHandler = (e: any) => {
     e.preventDefault();
-    // this.props.login();
-    fetch('/api/user')
-      .then(res => res.json())
-      .then(response => {
-        console.log(response)
-      })
-      .catch(err => console.log(err))
+    this.props.login({
+      username: 'zhangsan',
+      password: '123456'
+    });
   }
   render() {
+    console.log(this.props)
     return (
       <form className="login-wrap">
         <label htmlFor="username">
@@ -45,7 +44,7 @@ class Login extends React.Component<Props, object> {
 const mapStateToProps = (state: { loginReducer: object; }) => state.loginReducer;
 const mapDispatchToProps = (dispatch: any) => {
   return {
-    login: () => dispatch(loginAction())
+    login: (value: object) => dispatch(loginAction(value))
   }
 }
 
