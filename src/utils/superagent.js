@@ -1,7 +1,7 @@
 import Superagent from 'superagent';
 
 var apiHost = '';
-var apiPath = '/collection-api' // 接口统一地址
+var apiPath = '' // 接口统一地址
 
 // 环境变量
 switch (process.env.NODE_ENV) {

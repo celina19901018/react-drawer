@@ -1,4 +1,4 @@
-import request from '../../utils/superagent';
+import request from '../../utils/request';
 import { loginInApi } from '../../utils/api';
 import {
   LOGIN_INIT,
