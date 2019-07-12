@@ -1,7 +1,28 @@
+@import "../../styles/utils.scss";
+
 .login-wrap {
   padding: 20px 18px;
   label {
     display: block;
     width: 100%;
+    margin-top: 30px;
+    position: relative;
+    @include hairline("bottom", #eee);
+
+    input {
+      width: 100%;
+      border: none;
+      height: 30px;
+    }
+  }
+  button {
+    padding: 6px 40px;
+    border: none;
+    background: #348dfa;
+    border-radius: 30px;
+    display: block;
+    color: #fff;
+    font-size: 14 * 1px;
+    margin: 50px auto 0;
   }
 }

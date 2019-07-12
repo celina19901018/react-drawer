@@ -1,4 +1,4 @@
-import request from '../../utils/request';
+import request from '../../utils/superagent';
 import { loginInApi } from '../../utils/api';
 import {
   LOGIN_INIT,
@@ -32,9 +32,9 @@ export const loginFailure = (error?: string) => {
 export const loginAction = (params?: object) => (dispatch: any, getState: any) => {
   dispatch(loginStart());
   let _promise = request('post', loginInApi, params);
-  _promise.then(res => res.json())
+  _promise
     .then(res => {
-      if (res.resultCode === '000000') {
+      if (res.resultCode === 10000) {
         dispatch(loginSuccess(res.body))
       } else {
         dispatch(loginFailure(res.message))

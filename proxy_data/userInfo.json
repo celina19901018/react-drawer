@@ -1,5 +1,5 @@
 {
-  "code": 10000,
+  "resultCode": 10000,
   "message": "请求成功",
   "data": {
     "planInfo": {

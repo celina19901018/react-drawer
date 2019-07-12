@@ -1,7 +1,6 @@
 import Superagent from 'superagent';
 
 var apiHost = '';
-var apiPath = '' // 接口统一地址
 
 // 环境变量
 switch (process.env.NODE_ENV) {
@@ -19,7 +18,7 @@ switch (process.env.NODE_ENV) {
 }
 
 const request = (method, url, params) => new Promise((resolve, rejects) => {
-  Superagent[method || 'post'](apiHost + apiPath + url)
+  Superagent[method || 'post'](apiHost + url)
     .send(params)
     .set('Accept', 'application/json')
     .set('Access-Control-Allow-Origin', '*')
@@ -31,7 +30,7 @@ const request = (method, url, params) => new Promise((resolve, rejects) => {
       }
 
       const _res = JSON.parse(res.text);
-      if (_res.code === 10000) {
+      if (_res.resultCode === 10000) {
         resolve(res.body)
       } else {
         rejects(res.message)

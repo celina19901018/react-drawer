@@ -1,1 +1,1 @@
-export const loginInApi = '/userInfo';
+export const loginInApi = '/collection-api/userInfo';

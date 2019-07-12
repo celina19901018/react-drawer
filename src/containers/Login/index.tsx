@@ -1,11 +1,10 @@
 import React from 'react';
-import { combineReducers, Dispatch } from 'redux';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import { loginAction } from './action';
-import request from '../../utils/superagent';
 import './style.scss';
-import { loginInApi } from '../../utils/api';
+
 
 export interface Props {
   login: Function
@@ -20,7 +19,6 @@ class Login extends React.Component<Props, object> {
     });
   }
   render() {
-    console.log(this.props)
     return (
       <form className="login-wrap">
         <label htmlFor="username">
@@ -44,7 +42,7 @@ class Login extends React.Component<Props, object> {
 const mapStateToProps = (state: { loginReducer: object; }) => state.loginReducer;
 const mapDispatchToProps = (dispatch: any) => {
   return {
-    login: (value: object) => dispatch(loginAction(value))
+    login: bindActionCreators(loginAction, dispatch)
   }
 }
 
