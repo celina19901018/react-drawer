@@ -11,6 +11,9 @@ export interface Props {
 }
 
 class Login extends React.Component<Props, object> {
+  constructor(props: any) {
+    super(props)
+  }
   submitHandler = (e: any) => {
     e.preventDefault();
     this.props.login({
