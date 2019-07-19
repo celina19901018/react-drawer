@@ -1,3 +1,13 @@
+// 文本不换行，超出部分以省略号显示
+@mixin  ellipsis {
+  width: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+// 1px 实现
 @mixin scale-hairline-common($color, $top, $right, $bottom, $left) {
   content: "";
   position: absolute;
