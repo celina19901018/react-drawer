@@ -2,7 +2,7 @@
 @mixin  ellipsis {
   width: auto;
   overflow: hidden;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis;// 用一个省略好(...)来表示被截断的文本
   white-space: nowrap;
 }
 
