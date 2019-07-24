@@ -1,13 +1,13 @@
-样板工程基于[Create React App](https://github.com/facebook/create-react-app)[React16.x](https://github.com/facebook/react)[Typescript](https://github.com/microsoft/TypeScript)搭建而成，
+样板工程基于[Create React App](https://github.com/facebook/create-react-app) [React16.x](https://github.com/facebook/react) [Typescript](https://github.com/microsoft/TypeScript)搭建而成，
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## 起步
 `npm install` or `yarn install`
 
 ### 运行
-`npm start`
+`npm start`<br>
 如果你安装了yarn的话，也可以通过以下命令运行项目：<br>
-`yarn start` 
+`yarn start` <br>
 在开发模式下运行此应用程序。<br>
 请在你常用的浏览器中打开它 [http://localhost:3000](http://localhost:3000)。
 
