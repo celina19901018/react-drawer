@@ -11,8 +11,10 @@ import * as serviceWorker from './serviceWorker';
 import './index.scss';
 
 
-// const initialState = {};
-const store = configureStore();
+// let initialState: object;
+let store: any;
+
+store = configureStore();
 const history = createBrowserHistory();
 
 ReactDOM.render(
